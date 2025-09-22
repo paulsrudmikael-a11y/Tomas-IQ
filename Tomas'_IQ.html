@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hvor mye IQ har Tomas?</title>
+        <script>
+            window.onload = oppstart;
+            function oppstart() {
+                document.getElementById("btnVis").onclick = visIQ;
+                document.getElementById("rick").hidden;
+                rick.style.display = "none";
+            }
+            function visIQ() {
+                document.getElementById("riktigSvar").innerHTML = "";
+                document.getElementById("utskrift").innerHTML = "";
+                rick.style.display = "none";
+                let IQ = parseInt(document.getElementById("txtIQ").value);
+                let astley = document.getElementById("rick")
+                if (IQ > 2 && IQ <= 20) {
+                    document.getElementById("utskrift").innerHTML = "Dette er litt for høyt for Tomas :(";
+                    return;
+                } else if (IQ > 20) {
+                    document.getElementById("utskrift").innerHTML = "Holy Glaze!";
+                    return;
+                } else if (IQ === 2) {
+                    document.getElementById("riktigSvar").innerHTML = "Dette er riktig :D! Tommas har " + IQ + " IQ!";
+                    rick.style.display = "block";
+                    return;
+                } else if (IQ >= -20) {
+                    document.getElementById("utskrift").innerHTML = "Litt høyere faktisk, men ganske nærme :)";
+                    return;
+                } else {
+                    document.getElementById("utskrift").innerHTML = "Damn du hater Tomas...";
+                    return;
+                }
+            }
+        </script>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            img {
+                width: 200px;
+                border: solid 10px gray;
+                box-shadow: 5px 5px 20px rgb(50, 50, 50);
+            }
+            .s1 {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Hvor mye IQ har Tomas?</h2>
+        <img src="tomas.jpg">
+        <p><input type="number" id="txtIQ"><button type="button" id="btnVis">OK</button>
+        <p id="utskrift"></p><p class="s1" id="riktigSvar"></p>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="rick">Få din premie!</a>
+        <p>&copy; Mikael Kristian Paulsrud</p>
+    </body>
+</html>
